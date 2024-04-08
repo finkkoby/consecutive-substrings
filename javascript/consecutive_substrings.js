@@ -1,5 +1,12 @@
 function consecutiveSubstrings(string) {
-  // type your code here
+  let answer = []
+  for (let index in string) {
+    for (let i = 1; i + parseInt(index) <= string.length; i++) {
+      let substring = string.slice(index, i + parseInt(index))
+      answer.push(substring)
+    }
+  }
+  return answer
 }
 
 if (require.main === module) {
@@ -16,4 +23,8 @@ if (require.main === module) {
 module.exports = consecutiveSubstrings;
 
 // Please add your pseudocode to this file
+// let answer = []
+// for index in string
+//    for let i
+//        string.slice(index, i)
 // And a written explanation of your solution
